@@ -7,7 +7,6 @@ import AuditResultsDashboard from '@/components/AuditResultsDashboard';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 
 const TOOLS: AITool[] = ['Cursor', 'Claude', 'ChatGPT', 'Gemini'];
 
@@ -17,9 +16,9 @@ export default function Home() {
   );
   const [auditResult, setAuditResult] = useState<AuditResult | null>(null);
 
-  const handleInputChange = (index: number, field: keyof ToolUsageInput, value: any) => {
+  const handleInputChange = (index: number, field: keyof ToolUsageInput, value: string | number) => {
     const newInputs = [...inputs];
-    newInputs[index] = { ...newInputs[index], [field]: value };
+    newInputs[index] = { ...newInputs[index], [field]: value } as ToolUsageInput;
     setInputs(newInputs);
   };
 
@@ -46,7 +45,7 @@ export default function Home() {
             🛑 Stop burning cash on AI tools
           </h1>
           <p className="text-lg text-slate-400 mb-8 leading-relaxed">
-            Enter your current AI seat counts below. We'll run a blazing-fast audit and show you exactly where you're bleeding cash. <br/><span className="text-sm opacity-75">(Takes 10 seconds. No credit card required).</span>
+            Enter your current AI seat counts below. We&apos;ll run a blazing-fast audit and show you exactly where you&apos;re bleeding cash. <br/><span className="text-sm opacity-75">(Takes 10 seconds. No credit card required).</span>
           </p>
         </div>
 

@@ -1,15 +1,11 @@
 'use server';
 
-import { createClient } from '@supabase/supabase-js';
 import { Resend } from 'resend';
 import { AuditResult } from '@/types';
 
 // Use mock/placeholder env variables if actual ones are not present
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://mock.supabase.co';
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'mock-key';
 const resendApiKey = process.env.RESEND_API_KEY || 're_mock';
 
-const supabase = createClient(supabaseUrl, supabaseKey);
 const resend = new Resend(resendApiKey);
 
 export async function submitLead(email: string, auditData: AuditResult) {

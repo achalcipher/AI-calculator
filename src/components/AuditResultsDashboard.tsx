@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { AuditResult } from '@/types';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Share, ChevronLeft, CheckCircle2 } from 'lucide-react';
@@ -59,7 +59,7 @@ export default function AuditResultsDashboard({ result, onReset }: { result: Aud
           <div className="absolute top-0 left-0 w-1 h-full bg-emerald-500"></div>
           {aiSummary ? (
             <p className="text-slate-300 text-lg leading-relaxed text-left font-medium">
-              "{aiSummary}"
+              &quot;{aiSummary}&quot;
               <span className="block mt-2 text-xs text-slate-500 text-right uppercase tracking-wider font-bold">— CFO AI Analysis</span>
             </p>
           ) : (
@@ -129,7 +129,7 @@ export default function AuditResultsDashboard({ result, onReset }: { result: Aud
         <div className="text-center bg-gradient-to-r from-emerald-900/40 to-teal-900/40 border border-emerald-500/20 p-12 rounded-2xl animate-in slide-in-from-bottom-8 duration-700 delay-300 fill-mode-both">
           <h3 className="text-3xl font-bold text-white mb-4">Stop bleeding runway.</h3>
           <p className="text-lg text-slate-300 mb-8 max-w-xl mx-auto">
-            You're leaving ${result.totalAnnualSavings.toLocaleString()} on the table every single year. Let our experts optimize your stack so you can focus on actually building your product.
+            You&apos;re leaving ${result.totalAnnualSavings.toLocaleString()} on the table every single year. Let our experts optimize your stack so you can focus on actually building your product.
           </p>
           <Button 
             className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold h-12 px-8 rounded-full shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all"

@@ -31,8 +31,8 @@ export default function LeadCaptureForm({ auditData }: { auditData: AuditResult 
       <Card className="bg-slate-900 border-emerald-500/30 text-center py-8">
         <CardContent>
           <div className="w-16 h-16 bg-emerald-500/20 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">🎯</div>
-          <h3 className="text-xl font-bold text-white mb-2">Boom. You're on the list.</h3>
-          <p className="text-slate-400">Check your inbox for the breakdown. We'll be in touch shortly to help you stop the bleed.</p>
+          <h3 className="text-xl font-bold text-white mb-2">Boom. You&apos;re on the list.</h3>
+          <p className="text-slate-400">Check your inbox for the breakdown. We&apos;ll be in touch shortly to help you stop the bleed.</p>
         </CardContent>
       </Card>
     );
@@ -41,9 +41,9 @@ export default function LeadCaptureForm({ auditData }: { auditData: AuditResult 
   return (
     <Card className="bg-slate-900 border-slate-800 shadow-2xl">
       <CardHeader>
-        <CardTitle className="text-xl text-white">Let's fix this.</CardTitle>
+        <CardTitle className="text-xl text-white">Let&apos;s fix this.</CardTitle>
         <CardDescription className="text-slate-400">
-          Drop your work email below. We'll send you the detailed report and help you execute these downgrades safely.
+          Drop your work email below. We&apos;ll send you the detailed report and help you execute these downgrades safely.
         </CardDescription>
       </CardHeader>
       <CardContent>

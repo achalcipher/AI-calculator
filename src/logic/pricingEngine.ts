@@ -22,8 +22,6 @@ export const calculateSavingsForTool = (input: ToolUsageInput): SavingsRecommend
   let justification = 'Your current plan is optimal for your team size.';
   
   const proCost = seatCount * PRO_PRICE;
-  const entPriceEst = tool === 'Cursor' ? CURSOR_ENTERPRISE_PRICE_ESTIMATE : ENTERPRISE_PRICE_ESTIMATE;
-  const entCost = seatCount * entPriceEst;
 
   if (currentPlan === 'Enterprise' && seatCount < threshold) {
     recommendedPlan = 'Pro';
