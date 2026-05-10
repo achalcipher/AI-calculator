@@ -1,22 +1,42 @@
-# AI Spend Audit (Credex)
+# 💸 AI Spend Audit (by Credex)
 
-Credex is a B2B SaaS tool designed to identify and eliminate wasteful spending on AI subscriptions like Cursor, Claude, ChatGPT, and Gemini. It features a hardcoded logic engine that analyzes current seat counts and pricing tiers to instantly generate a tailored savings report and a shareable anonymous link. 
+> **Are you paying for Cursor, Claude, ChatGPT, and Gemini all at once?** You're probably overspending.
 
-## Demo
-- [Watch the Loom Walkthrough (Mock Link)](https://loom.com/share/mock-link-123)
-- Screenshot:
-  ![Audit Results Dashboard](/placeholder-dashboard.png)
+Welcome to **Credex**! This is a slick, B2B SaaS tool designed to act as your personal "Mint for AI." It analyzes your current team's seat counts and pricing tiers to instantly figure out where you're wasting money—and exactly how to fix it. 
 
-## Quick Start
+We built this because AI subscriptions add up fast, and keeping track of overlapping features across different vendors is a headache. We wanted to give founders and team leads a beautiful, instant dashboard to find those savings.
+
+---
+
+## ✨ Features
+
+- **⚡ Instant ROI:** A blazing-fast, hardcoded logic engine that calculates your potential savings the moment you hit submit.
+- **📊 Premium Dashboard:** A gorgeous, high-fidelity results page that breaks down your current vs. optimized spend.
+- **🔗 Anonymous Sharing:** Instantly generate a shareable URL to send your audit to your team—without ever forcing them to create an account.
+- **📬 Lead Capture:** Built-in integration with Supabase and Resend to securely capture emails and send reports.
+
+## 🚀 Quick Start
+
+Want to spin this up locally and see how much you could save? It just takes two commands:
+
 ```bash
 npm install
 npm run dev
 ```
-Navigate to `http://localhost:3000` to start saving money.
 
-## Decisions & Trade-offs
-1. **Hardcoded Pricing Engine vs API Integration**: We hardcoded the pricing rules instead of relying on web scraping or an external API. *Trade-off*: We gained immense stability and completely eliminated latency, but we sacrifice automatic updates when vendors change their pricing.
-2. **Next.js App Router vs Pages Router**: Chose App Router for its integrated Server Actions and native support for React Server Components. *Trade-off*: We gained simpler backend integration (Supabase/Resend) without needing an API layer, but faced a steeper learning curve regarding component boundaries (`'use client'`).
-3. **Pure Functions vs Object-Oriented Engine**: Wrote the pricing logic as pure functional code. *Trade-off*: Testing is vastly simplified (no mock states required), but scaling the engine to handle highly complex, interdependent vendor discounts might require excessive parameter passing in the future.
-4. **Anonymous Shared Links vs Required User Accounts**: We generate a shareable URL that strips PII instead of forcing users to create an account to view past audits. *Trade-off*: Greatly reduces user friction and increases virality, but we lose long-term tracking of user behavior without a login.
-5. **shadcn/ui vs Component Libraries (MUI/Chakra)**: Used shadcn/ui. *Trade-off*: We have complete control over the markup and styling to achieve the premium "Mint for AI" look, but we had to manually install and manage the raw component files instead of just importing from an npm package.
+Then, open your browser and head over to [http://localhost:3000](http://localhost:3000). That's it!
+
+*(Note: If you want to test the email and database features, you'll need to set up your `.env.local` file with your own Supabase and Resend keys!)*
+
+## 🧠 Why We Built It This Way (The Nerd Stuff)
+
+If you're curious about the architecture, here's a quick peek under the hood:
+
+- **Hardcoded Pricing Engine:** We decided *against* a complex API or web scraper. Hardcoding the logic means zero latency and unbreakable stability. Sure, we have to update prices manually when vendors change them, but the speed is worth it.
+- **Next.js App Router:** We're leveraging the latest Next.js features, including Server Actions. This lets us talk directly to our database (Supabase) without needing a separate backend server.
+- **Pure Functions:** Our pricing logic is written purely functionally. It makes testing an absolute breeze—no messy mock states required!
+- **shadcn/ui & Tailwind:** We wanted that premium, pixel-perfect look. Using shadcn gives us complete control over our components instead of fighting against a rigid UI library.
+
+---
+
+*Built with ❤️ to help you keep your runway right where it belongs: in your bank account.*
