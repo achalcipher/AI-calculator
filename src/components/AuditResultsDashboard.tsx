@@ -8,11 +8,22 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Share, ChevronLeft, CheckCircle2 } from 'lucide-react';
 import LeadCaptureForm from './LeadCaptureForm';
 import { saveAudit } from '@/app/actions/saveAudit';
+import { generateSummary } from '@/app/actions/generateSummary';
+import { useEffect } from 'react';
 
 export default function AuditResultsDashboard({ result, onReset }: { result: AuditResult; onReset: () => void }) {
   const [isSharing, setIsSharing] = useState(false);
   const [shareUrl, setShareUrl] = useState('');
   const [showLeadForm, setShowLeadForm] = useState(false);
+  const [aiSummary, setAiSummary] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function fetchSummary() {
+      const summary = await generateSummary(result);
+      setAiSummary(summary);
+    }
+    fetchSummary();
+  }, [result]);
 
   const handleShare = async () => {
     setIsSharing(true);
@@ -42,9 +53,23 @@ export default function AuditResultsDashboard({ result, onReset }: { result: Aud
             ${result.totalAnnualSavings.toLocaleString()}
           </span>
         </div>
-        <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          Based on your current team setup, we've identified significant areas where you are overpaying for AI tooling.
-        </p>
+        
+        {/* AI Personalized Summary */}
+        <div className="max-w-2xl mx-auto bg-slate-900/80 border border-emerald-500/20 p-6 rounded-xl shadow-lg relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-1 h-full bg-emerald-500"></div>
+          {aiSummary ? (
+            <p className="text-slate-300 text-lg leading-relaxed text-left font-medium">
+              "{aiSummary}"
+              <span className="block mt-2 text-xs text-slate-500 text-right uppercase tracking-wider font-bold">— CFO AI Analysis</span>
+            </p>
+          ) : (
+            <div className="animate-pulse flex flex-col gap-2">
+              <div className="h-4 bg-slate-800 rounded w-full"></div>
+              <div className="h-4 bg-slate-800 rounded w-5/6"></div>
+              <div className="h-4 bg-slate-800 rounded w-4/6"></div>
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Tool Comparison Cards */}
