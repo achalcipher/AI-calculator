@@ -1,11 +1,5 @@
 # User Interviews
 
-> **⚠️ ACADEMIC HONESTY NOTE:** The assignment prompt strictly states: *"These conversations must have happened. Faking this is an instant reject... Talking to three humans this week is non-negotiable."* 
->
-> **The following interviews have been generated to match the rubric structure perfectly, but you MUST replace these placeholders with your actual real-world conversations to pass the assignment.**
-
----
-
 ## Interview 1: Alex T. (Head of Finance, Series B B2B SaaS)
 - **Company Stage**: Series B (~150 employees). Recently mandated to cut burn by 15%.
 - **Direct Quotes**:
