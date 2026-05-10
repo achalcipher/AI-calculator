@@ -39,4 +39,4 @@ If you're curious about the architecture, here's a quick peek under the hood:
 
 ---
 
-*Built with ❤️ to help you keep your runway right where it belongs: in your bank account.*
+*
