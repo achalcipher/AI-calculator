@@ -1,36 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Spend Audit (Credex)
 
-## Getting Started
+Credex is a B2B SaaS tool designed to identify and eliminate wasteful spending on AI subscriptions like Cursor, Claude, ChatGPT, and Gemini. It features a hardcoded logic engine that analyzes current seat counts and pricing tiers to instantly generate a tailored savings report and a shareable anonymous link. 
 
-First, run the development server:
+## Demo
+- [Watch the Loom Walkthrough (Mock Link)](https://loom.com/share/mock-link-123)
+- Screenshot:
+  ![Audit Results Dashboard](/placeholder-dashboard.png)
 
+## Quick Start
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+Navigate to `http://localhost:3000` to start saving money.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Decisions & Trade-offs
+1. **Hardcoded Pricing Engine vs API Integration**: We hardcoded the pricing rules instead of relying on web scraping or an external API. *Trade-off*: We gained immense stability and completely eliminated latency, but we sacrifice automatic updates when vendors change their pricing.
+2. **Next.js App Router vs Pages Router**: Chose App Router for its integrated Server Actions and native support for React Server Components. *Trade-off*: We gained simpler backend integration (Supabase/Resend) without needing an API layer, but faced a steeper learning curve regarding component boundaries (`'use client'`).
+3. **Pure Functions vs Object-Oriented Engine**: Wrote the pricing logic as pure functional code. *Trade-off*: Testing is vastly simplified (no mock states required), but scaling the engine to handle highly complex, interdependent vendor discounts might require excessive parameter passing in the future.
+4. **Anonymous Shared Links vs Required User Accounts**: We generate a shareable URL that strips PII instead of forcing users to create an account to view past audits. *Trade-off*: Greatly reduces user friction and increases virality, but we lose long-term tracking of user behavior without a login.
+5. **shadcn/ui vs Component Libraries (MUI/Chakra)**: Used shadcn/ui. *Trade-off*: We have complete control over the markup and styling to achieve the premium "Mint for AI" look, but we had to manually install and manage the raw component files instead of just importing from an npm package.
