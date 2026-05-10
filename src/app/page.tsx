@@ -43,10 +43,10 @@ export default function Home() {
       <div className="w-full max-w-4xl grid md:grid-cols-2 gap-12 items-center">
         <div>
           <h1 className="text-5xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-            Stop Burning Cash on AI
+            🛑 Stop burning cash on AI tools
           </h1>
           <p className="text-lg text-slate-400 mb-8 leading-relaxed">
-            Enter your current AI tool usage below to generate a comprehensive spend audit. We'll identify exactly where you are overpaying.
+            Enter your current AI seat counts below. We'll run a blazing-fast audit and show you exactly where you're bleeding cash. <br/><span className="text-sm opacity-75">(Takes 10 seconds. No credit card required).</span>
           </p>
         </div>
 
@@ -94,7 +94,7 @@ export default function Home() {
               className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold h-12 mt-4 transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]"
               onClick={handleRunAudit}
             >
-              Analyze My Spend
+              💸 Analyze My Spend (100% Free)
             </Button>
           </CardContent>
         </Card>

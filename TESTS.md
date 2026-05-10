@@ -1,16 +1,20 @@
-# Automated Tests
+# 🧪 Automated Tests (Because Math is Hard)
 
-The core math engine of this application handles financial calculations and is covered by an automated test suite using Jest. The tests ensure that recommendations for savings are always mathematically sound and properly handle edge cases.
+The core engine of this app handles financial math. If we tell a CFO they are wasting $10k, we better be right. That's why the entire logic engine is covered by a rigorous Jest test suite.
 
-## Test Suite: Pricing Engine (`src/logic/pricingEngine.test.ts`)
+## The Test Suite (`src/logic/pricingEngine.test.ts`)
 
 1. **`should recommend downgrading Cursor from Enterprise to Pro for a small team`**
-   - **Purpose**: Verifies that teams below the 10-seat threshold on Cursor Enterprise are correctly flagged to downgrade to Pro, returning the exact monthly savings dollar amount.
+   - **Why we test this**: Makes sure that if a 3-person team is on Cursor Enterprise, we accurately flag them to downgrade and spit out the exact dollar amount saved.
+
 2. **`should keep Claude on Enterprise if team size meets the threshold`**
-   - **Purpose**: Ensures that teams who legitimately meet the 5-seat threshold for Claude Enterprise are NOT recommended to downgrade, returning $0 in savings.
+   - **Why we test this**: We don't want to look stupid by telling a 50-person engineering org to downgrade to Pro when they actually *need* Enterprise. This ensures we return $0 in savings for legit enterprise setups.
+
 3. **`should identify overpayment on a Pro plan`**
-   - **Purpose**: Verifies that if a user inputs a monthly spend that is mathematically higher than the standard $20/seat Pro rate, the engine flags the overpayment even if the plan type shouldn't change.
+   - **Why we test this**: Sometimes people are just getting ripped off. If they input a monthly spend higher than the standard $20/seat Pro rate, the engine catches it even if the plan tier stays the same.
+
 4. **`should correctly calculate total annual savings for multiple tools`**
-   - **Purpose**: A comprehensive integration test that passes an array of multiple tools (e.g., Cursor + Gemini) and verifies the `reduce` function correctly calculates the cumulative annual savings.
+   - **Why we test this**: The big kahuna. We throw an array of multiple tools at it (Cursor + Gemini) and make sure our `reduce` function correctly calculates the cumulative annual savings without dropping a zero.
+
 5. **`should return 0 savings if the plan is optimal`**
-   - **Purpose**: Verifies that standard, optimized inputs do not accidentally generate fake savings, ensuring the engine maintains integrity.
+   - **Why we test this**: Verifies that standard, optimized setups don't magically generate fake savings. Integrity is everything.

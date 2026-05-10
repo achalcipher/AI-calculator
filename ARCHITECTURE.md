@@ -1,6 +1,8 @@
-# Architecture
+# 🏗️ Architecture & Stack Decisions
 
-## System Diagram
+Here is a quick breakdown of how we built Credex and why we made these choices.
+
+## How it works (The System Diagram)
 
 ```mermaid
 graph TD
@@ -15,14 +17,18 @@ graph TD
     H -->|Generates URL ID| I[Shareable Link with OG Tags]
 ```
 
-## Stack Justification
-- **Next.js (App Router)**: Chosen for its seamless integration of frontend UI and backend Server Actions. It allows us to securely execute Supabase queries and send emails without standing up a separate Express/Node server.
-- **Supabase**: A Postgres-backed BaaS that gives us an instant database, easy Row Level Security (RLS) in the future, and zero-configuration scaling for our initial launch.
-- **Tailwind CSS + shadcn/ui**: Critical for executing the high-fidelity, "Mint for AI" aesthetic quickly. shadcn/ui provides accessible primitives without the bloat of traditional component libraries.
+## Why We Chose This Stack
 
-## Scaling Plan for 10k Audits/Day
-Currently, the app performs calculations entirely on the client or server without heavy processing.
-If traffic scales to 10k audits per day:
-1. **Edge Caching**: We will cache the static assets and the landing page using Next.js Edge caching (Vercel or Cloudflare).
-2. **Supabase Connection Pooling**: 10k audits/day is roughly 400 requests/hour. Supabase handles this natively, but we will enable PgBouncer connection pooling to ensure Server Actions don't exhaust database connections during traffic spikes.
-3. **Async Email Queues**: Resend API calls inside Server Actions could become a bottleneck. We will offload the lead capture email trigger to an asynchronous background worker queue (e.g., Inngest or Upstash Kafka) to return a success response to the client immediately.
+When you're building a SaaS to test an idea, speed and builder experience are everything. Here's what we went with:
+
+- **Next.js (App Router)**: Honestly, having the frontend and backend in one place is a superpower. Server Actions let us hit our database and fire off emails securely without dealing with the headache of setting up a separate Express server.
+- **Supabase**: We needed a database *yesterday*. Supabase gives us a solid Postgres backend instantly. Plus, row-level security (RLS) is great for when we add user accounts later.
+- **Tailwind CSS + shadcn/ui**: We wanted this tool to feel premium and trustworthy (think "Mint for AI"). Tailwind makes styling fast, and shadcn gives us great, accessible UI pieces without feeling bloated like older component libraries.
+
+## 🚀 Preparing for Scale (10k Audits/Day)
+
+Right now, the app is blazing fast because the math happens on the client or server without heavy processing. But if a big tech newsletter picks this up and we hit 10k audits a day, here is the game plan:
+
+1. **Edge Caching**: We'll aggressively cache static assets and the landing page on the edge (via Vercel or Cloudflare).
+2. **Supabase Connection Pooling**: 10k audits a day is only about 400 requests an hour. Supabase can eat that for breakfast, but we'll flip on PgBouncer connection pooling just to be safe so Server Actions don't exhaust DB connections during spikes.
+3. **Async Email Queues**: Sending emails via Resend in Server Actions is fine for now, but it could get slow. Eventually, we'll offload those email triggers to a background worker (like Inngest or Upstash) so the UI stays snappy for the user.

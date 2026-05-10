@@ -102,15 +102,15 @@ export default function AuditResultsDashboard({ result, onReset }: { result: Aud
       {/* Conditional Call to Action */}
       {result.totalAnnualSavings > 500 && !showLeadForm && (
         <div className="text-center bg-gradient-to-r from-emerald-900/40 to-teal-900/40 border border-emerald-500/20 p-12 rounded-2xl animate-in slide-in-from-bottom-8 duration-700 delay-300 fill-mode-both">
-          <h3 className="text-3xl font-bold text-white mb-4">Leave the configuration to us.</h3>
+          <h3 className="text-3xl font-bold text-white mb-4">Stop bleeding runway.</h3>
           <p className="text-lg text-slate-300 mb-8 max-w-xl mx-auto">
-            You're leaving ${result.totalAnnualSavings.toLocaleString()} on the table. Let our experts optimize your AI stack and negotiate enterprise contracts on your behalf.
+            You're leaving ${result.totalAnnualSavings.toLocaleString()} on the table every single year. Let our experts optimize your stack so you can focus on actually building your product.
           </p>
           <Button 
             className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold h-12 px-8 rounded-full shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all"
             onClick={() => setShowLeadForm(true)}
           >
-            Get a Credex Consultation
+            Claim My Savings
           </Button>
         </div>
       )}

@@ -1,43 +1,41 @@
-# Developer Log
+# 📓 Founder's Dev Log
 
-**Day 1**
-- **Hours Worked**: 5
-- **Tasks**: Ideation, architecture planning, and initialized Next.js App Router with Tailwind CSS.
-- **Learnings**: Discovered that Next.js 15+ has changed caching defaults, requiring careful consideration of `dynamic` route segments.
-- **Blockers**: Trouble getting the `shadcn` CLI to install properly due to npm uppercase folder naming restrictions.
+Building Credex was a sprint. Here is a raw look at the week it took to get this out the door.
 
-**Day 2**
-- **Hours Worked**: 6
-- **Tasks**: Built the hardcoded `pricingEngine.ts` utilizing pure functions. Added type definitions for AI tools.
-- **Learnings**: Pure functions significantly simplify the mental overhead when dealing with complex nested IF statements for pricing tiers.
-- **Blockers**: None today. Math logic was straightforward.
+**Day 1: The Foundation**
+- **Time Spent**: 5 hours
+- **The Grind**: Brainstorming, whiteboarding the architecture, and spinning up Next.js App Router with Tailwind.
+- **Aha Moment**: Next.js 15 has some new caching defaults that made me rethink how to handle our dynamic routes.
+- **The Struggle**: Fighting with npm over folder naming restrictions just to get the `shadcn` CLI installed. Typical start to a project!
 
-**Day 3**
-- **Hours Worked**: 4
-- **Tasks**: Configured Jest testing framework and wrote 5 robust test cases for the pricing engine.
-- **Learnings**: Testing Next.js App router apps requires specific Jest configurations for path aliases (`@/*`).
-- **Blockers**: `ts-jest` threw errors until I correctly mapped the moduleNameMapper in `jest.config.ts`.
+**Day 2: The Brains of the Operation**
+- **Time Spent**: 6 hours
+- **The Grind**: Writing the core `pricingEngine.ts` logic and setting up TypeScript definitions for all the AI tools.
+- **Aha Moment**: Using pure functions for the math logic was the best decision. It made dealing with all the nested pricing tiers so much easier to reason about.
 
-**Day 4**
-- **Hours Worked**: 7
-- **Tasks**: Designed the high-fidelity UI dashboard. Implemented the "Mint for AI" aesthetic with dark gradients and glowing buttons.
-- **Learnings**: Tailwind's `animate-in` and `fade-in` utility classes make micro-animations incredibly easy to implement without external libraries like Framer Motion.
-- **Blockers**: Aligning the comparison cards dynamically on mobile screens took extra CSS grid tuning.
+**Day 3: Making Sure It Actually Works**
+- **Time Spent**: 4 hours
+- **The Grind**: Configured Jest and wrote solid test cases to ensure the pricing engine never hallucinates a bad number.
+- **The Struggle**: `ts-jest` yelled at me for an hour until I finally mapped the path aliases (`@/*`) correctly in `jest.config.ts`.
 
-**Day 5**
-- **Hours Worked**: 5
-- **Tasks**: Integrated Supabase for storing anonymous shared audits and Resend for the lead capture system.
-- **Learnings**: Next.js Server Actions (`'use server'`) completely eliminate the need for writing boilerplate API routes.
-- **Blockers**: Setting up the Supabase mock environment variables properly so the app doesn't crash during local dev before the DB is fully spun up.
+**Day 4: Making It Pretty**
+- **Time Spent**: 7 hours
+- **The Grind**: Designing the high-fidelity UI. I went all-in on the "Mint for AI" dark mode aesthetic.
+- **Aha Moment**: Tailwind's `animate-in` utility classes are magic. I got sweet micro-animations working without needing to drag in heavy libraries like Framer Motion.
+- **The Struggle**: CSS Grid on mobile is still a puzzle sometimes. Took a bit of tweaking to get the comparison cards looking perfect on small screens.
 
-**Day 6**
-- **Hours Worked**: 6
-- **Tasks**: Created the `/share/[id]` dynamic route and implemented `generateMetadata` for Open Graph and Twitter cards.
-- **Learnings**: Next.js `generateMetadata` is incredibly powerful for programmatic SEO and creating dynamic social sharing cards.
-- **Blockers**: Debugging the async/await unwrapping for Next.js 15 `params` object inside the metadata function.
+**Day 5: Hooking Up the Pipes**
+- **Time Spent**: 5 hours
+- **The Grind**: Integrating Supabase to store those anonymous shared audits, and plugging in Resend to capture emails.
+- **Aha Moment**: Server Actions (`'use server'`) are insane. Skipping the boilerplate API route creation feels illegal but awesome.
 
-**Day 7**
-- **Hours Worked**: 3
-- **Tasks**: Final QA, Lighthouse accessibility checks, and writing comprehensive documentation.
-- **Learnings**: A product isn't finished until the documentation is treated as a first-class feature.
-- **Blockers**: Formatting 13 separate documentation files efficiently without losing track of constraints.
+**Day 6: Going Viral (Hopefully)**
+- **Time Spent**: 6 hours
+- **The Grind**: Building the `/share/[id]` dynamic route and wiring up `generateMetadata` so the links look great on Twitter and Slack.
+- **Aha Moment**: Programmatic SEO with dynamic Open Graph cards is going to be huge for our growth loop.
+- **The Struggle**: Had to wrestle with the Next.js 15 `params` object unwrapping, but got it sorted.
+
+**Day 7: The Final Polish**
+- **Time Spent**: 3 hours
+- **The Grind**: Final QA, Lighthouse accessibility checks, and writing up all this documentation!
+- **Aha Moment**: A product isn't done until you can easily explain it to someone else.

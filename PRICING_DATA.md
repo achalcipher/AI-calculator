@@ -1,29 +1,25 @@
-# Official Pricing Reference Data
+# 💰 Official Pricing Reference Data
 
-Every calculation in the Credex logic engine is mapped to official vendor pricing. This ensures our savings recommendations are accurate and trustworthy.
+To make sure our engine doesn't spit out garbage, every calculation is hard-mapped to official vendor pricing. 
 
 ## 1. Cursor
-- **Pro Tier**: $20 / user / month
-- **Enterprise Tier**: Custom (Estimated at $40 / user / month threshold)
-- **Official Source**: [https://www.cursor.com/pricing](https://www.cursor.com/pricing)
-- **Date Verified**: 2026-05-09
+- **Pro**: $20 / user / month
+- **Enterprise**: Custom (We estimate the threshold around $40 / user / month)
+- **Source**: [cursor.com/pricing](https://www.cursor.com/pricing)
 
 ## 2. Claude (Anthropic)
-- **Pro Tier**: $20 / user / month
-- **Enterprise Tier**: Custom (Estimated at $60 / user / month threshold)
-- **Official Source**: [https://www.anthropic.com/pricing](https://www.anthropic.com/pricing)
-- **Date Verified**: 2026-05-09
+- **Pro**: $20 / user / month
+- **Enterprise**: Custom (Estimated threshold at $60 / user / month)
+- **Source**: [anthropic.com/pricing](https://www.anthropic.com/pricing)
 
 ## 3. ChatGPT (OpenAI)
-- **Team Tier (Pro eq.)**: $25 / user / month (billed annually, we use $20 as baseline for this audit tool)
-- **Enterprise Tier**: Custom (Estimated at $60 / user / month threshold)
-- **Official Source**: [https://openai.com/chatgpt/pricing/](https://openai.com/chatgpt/pricing/)
-- **Date Verified**: 2026-05-09
+- **Team (Pro eq.)**: $25 / user / month (We use $20 as a baseline to keep the math clean for this audit)
+- **Enterprise**: Custom (Estimated threshold at $60 / user / month)
+- **Source**: [openai.com/chatgpt/pricing/](https://openai.com/chatgpt/pricing/)
 
 ## 4. Gemini (Google)
-- **Gemini Advanced**: $20 / user / month
-- **Enterprise Tier**: Custom (Estimated at $60 / user / month threshold)
-- **Official Source**: [https://gemini.google.com/advanced](https://gemini.google.com/advanced)
-- **Date Verified**: 2026-05-09
+- **Advanced**: $20 / user / month
+- **Enterprise**: Custom (Estimated threshold at $60 / user / month)
+- **Source**: [gemini.google.com/advanced](https://gemini.google.com/advanced)
 
-*Note: Enterprise pricing is opaque across the industry. We use established industry threshold averages ($40-$60) to identify obvious overspending for small teams (<10 seats).*
+*Note: Enterprise pricing is notoriously opaque. We use industry averages ($40-$60) to spot obvious overspending for small teams (like, why does a 5-person team have an enterprise contract?).*

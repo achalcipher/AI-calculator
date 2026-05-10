@@ -1,37 +1,37 @@
-# Landing Page Copy
+# 📝 Landing Page Copy (The Sales Pitch)
 
-## Headlines & Subheadlines
+## The Hook (Above the fold)
 
 **Hero Headline**
-> Stop burning cash on AI subscriptions.
+> 🛑 Stop burning cash on redundant AI tools.
 
 **Hero Subheadline**
-> Run a free audit to see exactly how much your team is overpaying for Cursor, Claude, and ChatGPT. 
+> Run a free, 10-second audit to see exactly how much your team is overpaying for Cursor, Claude, and ChatGPT. 
 
 **Call to Action (CTA)**
-> Analyze My Spend (Free)
+> 💸 Analyze My Spend (100% Free)
 
 **Secondary Headline (Below the fold)**
 > You're paying for Enterprise. You only need Pro.
 
 **Secondary Subheadline**
-> Most startups waste $10k+ a year on unnecessary enterprise AI tiers. We find the waste instantly.
+> Startups are bleeding $10k+ a year on unnecessary enterprise AI tiers. We find that waste instantly so you can put it back in your runway.
 
 ---
 
-## Frequently Asked Questions (FAQ)
+## The Objections (FAQ)
 
-**Q: Do I need to connect my accounting software?**
-A: No. Just input your current seat counts and pricing tiers manually. You'll see your savings in seconds without passing any security hurdles.
+**Q: Do I need to connect my bank or accounting software?**
+A: Absolutely not. Just punch in your current seat counts and pricing tiers. You'll see your savings instantly without any security headaches.
 
-**Q: Which AI tools do you audit?**
-A: Currently, we support the major developer and ops tools: Cursor, Anthropic (Claude), OpenAI (ChatGPT), and Google (Gemini).
+**Q: Which AI tools do you look at?**
+A: Right now, we focus on the big ones draining your budget: Cursor, Anthropic (Claude), OpenAI (ChatGPT), and Google (Gemini).
 
-**Q: Is the audit actually free?**
-A: 100% free. If we find massive savings, we'll offer to negotiate and consolidate your contracts for a flat consulting fee. If you don't want the help, you keep the report.
+**Q: Is this actually free? What's the catch?**
+A: 100% free. If we find massive savings, we'll offer to negotiate and consolidate your contracts for a flat fee. If you want to do it yourself, keep the report. No hard feelings.
 
-**Q: How do you calculate the savings?**
-A: We use official vendor pricing and industry-standard Enterprise thresholds. If you have a team of 3 on a $60/month enterprise plan, we mathematically prove why downgrading to $20/month Pro saves you cash without losing core features.
+**Q: How do you know if we can downgrade?**
+A: We map official vendor pricing against industry-standard usage. If you have 3 devs on a $60/month enterprise plan, we mathematically prove why downgrading to the $20/month Pro tier saves you cash without losing the features you actually use.
 
-**Q: Can I share the results with my CFO?**
-A: Yes! After running the audit, click "Share Anonymous Audit" to generate a secure, private link you can drop in Slack.
+**Q: Can I send this to my CFO to prove a point?**
+A: Yes! After the audit, just click "Share Anonymous Audit" to get a clean, secure link you can drop straight into Slack.
