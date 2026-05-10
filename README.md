@@ -39,4 +39,3 @@ If you're curious about the architecture, here's a quick peek under the hood:
 
 ---
 
-*
